@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sign Up</title>
+    <link href="{% static 'vendor/bootstrap-4.1/bootstrap.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet" media="all">
+</head>
+<body>
+<div class="container">
+    <div class="login-wrap">
+        <div class="login-content">
+            <div class="login-logo">
+                <a href="{% url 'home_page' %}">
+                    <img src="{% static 'images/icon/logo.png' %}" alt="CoolAdmin">
+                </a>
+            </div>
+            <div class="login-form">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-primary" type="submit">Sign Up</button>
+                </form>
+                <div>
+                    <a href="{% url 'login_page' %}">Already have an account? Log in here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'vendor/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap-4.1/bootstrap.min.js' %}"></script>
+</body>
+</html>
